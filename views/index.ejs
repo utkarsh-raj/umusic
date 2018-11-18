@@ -1,0 +1,15 @@
+<h1>Hello from index.ejs!!!!!</h1>
+
+<% var i = 0;%>
+<% for (i = 0; i < 4; i++) { %>
+    <% if (data.items[i].id.kind === "youtube#video") { %>
+        <div>
+            <img src="<%= data.items[i].snippet.thumbnails.default.url %>">
+            <h3><%= data.items[i].snippet.title %></h3>
+            <p>
+                by <%= data.items[i].snippet.channelTitle %>
+            </p>
+            <a href="/download/<%= data.items[i].id.videoId %>">Download</a>
+        </div>
+    <% } %>
+<% } %>
