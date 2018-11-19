@@ -7,8 +7,9 @@ var youtube = require("youtube-dl");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
-var cwd = "YOUR DOWNLOAD DESTIANTION HERE";
+var cwd = __dirname;
 
 
 
@@ -57,17 +58,15 @@ app.get("/download/:videoUrl", function(req, res) {
             track = String(info.track + ".mp4");
         }
         console.log(track);
-        res.redirect("/");
 
         video.pipe(fs.createWriteStream(track));
+
+        res.redirect("/started");
     });;
 });
 
-app.get("/songs", function(req, res) {
-    fs.readdir(cwd, function(err, files) {
-        var songs = files;
-        res.render("songs", {songs: songs, cwd: cwd});
-    });
+app.get("/started", function(req, res) {
+    res.render("started");
 });
 
 app.listen(8080, function(req, res) {
