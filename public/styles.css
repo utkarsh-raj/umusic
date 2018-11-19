@@ -1,0 +1,71 @@
+#main {
+    margin: auto;
+    margin-top: 3%;
+}
+
+input {
+    width: 100%;
+    padding: 1%;
+}
+
+.container {
+    width: 70%;
+}
+
+#submitButton {
+    width: 20%;
+    margin: auto;
+}
+
+#search {
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+
+#footnote {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    font-family: "Signika", "sans-serif";
+}
+
+.fa-heart {
+    color: red;
+}
+
+.dataField {
+    margin-top: 5%;
+    border-bottom: 2px solid black;
+}
+
+.col-md-5 {
+    border: 1px solid white;
+    border-right: 2px solid green;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+#download {
+    color: white;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+h1 {
+    font-family: "Acme", "sans-serif";
+}
+
+span {
+    font-family: "Sedgwick Ave", "cursive";
+}
+
+body {
+    background: url(/leaves-pattern.png);
+}
+
+#startedPage {
+    text-align: center;
+}

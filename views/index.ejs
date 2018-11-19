@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+
+<div class="container">
+        <% var i = 0;%>
+        <% for (i = 0; i < 4; i++) { %>
+            <% if (data.items[i].id.kind === "youtube#video") { %>
+                <div class="row dataField">
+                    <div class="col-md-5 img-thumbnail img-responsive">
+                        <img src="<%= data.items[i].snippet.thumbnails.medium.url %>">
+                    </div>
+                    <div class="col-md-7">
+                        <h3><%= data.items[i].snippet.title %></h3>
+                        <p>
+                            by <strong><%= data.items[i].snippet.channelTitle; %></strong>
+                        </p>
+                        <button class="btn btn-primary"><a id="download" href="/download/<%= data.items[i].id.videoId %>"><i class="fas fa-download"></i> Download Now!</a></button>
+                    </div>
+                </div>
+                <br>
+            <% } %>
+        <% } %>
+</div>
+
+<% include ./partials/footer %>

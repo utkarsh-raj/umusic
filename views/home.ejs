@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1><i class="fas fa-headphones"></i> UMusic</h1>
+        <p>Your favourite music downloads. <span>Simplified.</span></p>
+    </div>
+</div>
+
+<div class="container" id="main">
+    <form action="/search" method="POST" class="form-group">
+        <div class="container" id="search">
+            <input type="text" name="query" placeholder="Find everything you ever wanted..." class="form-control">
+        </div>
+        <div class="container" id="submitButton">
+            <input type="submit" name="Let's Go!" class="btn btn-primary form-control">
+        </div>
+    </form>
+</div>
+
+<% include ./partials/footer %>
