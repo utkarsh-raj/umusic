@@ -4,10 +4,12 @@ var request = require("request");
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var youtube = require("youtube-dl");
+var dotenv = require("dotenv");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+dotenv.config();
 
 var cwd = __dirname;
 
@@ -34,10 +36,16 @@ app.get("/search/:query", function(req, res) {
             finalQuery += "+";
         }
     }
-    request("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + finalQuery + "&key=YOUR API KEY HERE",
+
+    // console.log(process.env.APICREDENTIAL);
+    request("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + finalQuery + "&key=" + process.env.APICREDENTIAL,
     function(error, response, body) {
+    	if (error) {
+    		console.log(error);
+    	}
         var data = JSON.parse(body);
         // res.send(data);
+        console.log(data);
         res.render("index", {data: data});
     }
 );
