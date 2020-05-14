@@ -1,7 +1,7 @@
 # umusic
 Your favourite video downloads. Simplified.
 
-### Steps for installing locally
+### Steps for installing umusic locally
 
 - Download the project on your local system
 ```
