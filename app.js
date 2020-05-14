@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 dotenv.config();
-
+// console.log(result);
 var cwd = __dirname;
 
 
@@ -52,9 +52,10 @@ app.get("/search/:query", function(req, res) {
 });
 
 app.get("/download/:videoUrl", function(req, res) {
-    console.log(cwd);
-    var video = youtube("https://www.youtube.com/embed/" + req.params.videoUrl, 
-    ["--format=18"], 
+    // console.log(cwd);
+    // console.log("https://www.youtube.com/watch?" + req.params.videoUrl);
+    const video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
+    ["--format=18"],
     {cwd: cwd});
     // console.log(video);
     video.on("info", function(info) {
