@@ -78,6 +78,7 @@ app.get("/started", function(req, res) {
     res.render("started");
 });
 
-app.listen(8080, function(req, res) {
-    console.log("The Music App has started!");
+var port = 8082;
+app.listen(port, function(req, res) {
+    console.log("The Server is up!\nGo to your favourite Web Browser and visit localhost:" + String(port) + " to see the Application");
 });
