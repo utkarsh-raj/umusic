@@ -1,6 +1,22 @@
 <% include ./partials/header %>
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/">
+                <h3 id="brand"><i class="fas fa-headphones"></i> UMusic</h3>
+            </a>
+        </div>
+        <form action="/search" method="POST" class="form-group">
+            <div class="col-md-6" id="search">
+                <input type="text" name="query" placeholder="Find everything you ever wanted..." class="form-control">
+            </div>
+            <div class="col-md-2" id=search>
+                <input type="submit" name="Let's Go!" class="btn btn-primary form-control">                
+            </div>
+        </form>
+    </div>
+    
         <% var i = 0;%>
         <% for (i = 0; i <= 4; i++) { %>
             <% if (data.items[i].id.kind === "youtube#video") { %>

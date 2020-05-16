@@ -49,7 +49,7 @@ app.get("/search/:query", function(req, res) {
 });
 
 app.get("/download/:videoUrl", function(req, res) {
-    const video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
+    var video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
     ["--format=18"],
     {cwd: cwd});
     // console.log(video);
@@ -73,7 +73,13 @@ app.get("/started", function(req, res) {
     res.render("started");
 });
 
+app.get("/test", function(req, res) {
+    res.send("The server is up!") ; 
+});
+
 var port = 8082;
 app.listen(port, function(req, res) {
     console.log("The Server is up!\nGo to your favourite Web Browser and visit localhost:" + String(port) + " to see the Application");
 });
+
+module.exports = app; // For the testing of the application
