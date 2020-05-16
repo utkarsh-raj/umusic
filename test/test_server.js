@@ -18,5 +18,5 @@ describe("server test", function() {
 			.end(function(err, res) {
 				expect(res.text).to.equal("The server is up!");
 			});
-	});
+	})
 });
