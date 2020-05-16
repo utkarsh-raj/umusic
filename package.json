@@ -1,10 +1,10 @@
 {
-  "name": "u-music",
+  "name": "umusic",
   "version": "1.0.0",
-  "description": "",
+  "description": "Your favourite music downloads. Simplified.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node app.js"
   },
   "author": "Utkarsh Raj Singh",
   "license": "ISC",
