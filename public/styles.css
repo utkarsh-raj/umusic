@@ -1,7 +1,7 @@
-#main {
+/*#main {
     margin: auto;
     margin-top: 3%;
-}
+}*/
 
 input {
     width: 100%;
@@ -17,9 +17,16 @@ input {
     margin: auto;
 }
 
-#search {
-    padding-top: 1%;
+#search{
+    padding-top: 20px;
     padding-bottom: 3%;
+}
+
+#brand, a:hover{
+    margin: 0 !important;
+    padding-top: 25px !important;
+    text-decoration: none !important;
+    color: black !important;
 }
 
 #footnote {
