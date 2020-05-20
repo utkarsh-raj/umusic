@@ -5,11 +5,7 @@
 
 Your favourite video downloads. Simplified.
 
-<<<<<<< HEAD
-### Steps for installing umusic locally
-=======
 ### Steps for building UMusic locally
->>>>>>> 4a16924f6cce98cc6da638758fbfdad087b770d1
 
 - Download the project on your local system
 ```
