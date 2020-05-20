@@ -5,7 +5,9 @@
 
 Your favourite video downloads. Simplified.
 
+
 ### 🚀 Quick Start Steps for building UMusic locally
+
 
 - Download the project on your local system
 ```
@@ -27,6 +29,7 @@ npm install -g nodemon
 - Store that key in a sample.env file
 - Rename *sample.env* to *.env*
 - Run the **main.js** file
+
 ```
 node app.js
 ```
