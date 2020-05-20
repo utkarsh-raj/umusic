@@ -16,7 +16,7 @@
             </div>
         </form>
     </div>
-    
+
         <% var i = 0;%>
         <% for (i = 0; i <= 4; i++) { %>
             <% if (data.items[i].id.kind === "youtube#video") { %>
@@ -29,7 +29,9 @@
                         <p>
                             by <strong><%= data.items[i].snippet.channelTitle; %></strong>
                         </p>
-                        <button class="btn btn-primary"><a id="download" href="/download/<%= data.items[i].id.videoId %>"><i class="fas fa-download"></i> Download Now!</a></button>
+                        <a id="download" href="/download/<%= data.items[i].id.videoId %>">
+                            <button class="btn btn-primary"><i class="fas fa-download"></i> Download Now!</button>
+                        </a>
                     </div>
                 </div>
                 <br>

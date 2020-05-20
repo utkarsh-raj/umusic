@@ -1,7 +1,7 @@
-#main {
+/*#main {
     margin: auto;
     margin-top: 3%;
-}
+}*/
 
 input {
     width: 100%;
@@ -21,6 +21,7 @@ input {
     padding-top: 20px;
     padding-bottom: 3%;
 }
+
 #brand, a:hover{
     margin: 0 !important;
     padding-top: 25px !important;
