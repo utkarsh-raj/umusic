@@ -26,9 +26,8 @@ npm install
 npm install -g nodemon
 ```
 - Create a [Youtube Data API v3](https://console.developers.google.com/apis/library/youtube.googleapis.com) Key
-- Store that key in a sample.env file
-- Rename *sample.env* to *.env*
-- Run the **main.js** file
+- Store that key in .env file
+- Run the **app.js** file
 
 ```
 node app.js
