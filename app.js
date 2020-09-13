@@ -10,7 +10,6 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 dotenv.config();
-
 var cwd = __dirname;
 
 
@@ -37,14 +36,12 @@ app.get("/search/:query", function(req, res) {
         }
     }
 
-    // console.log(process.env.APICREDENTIAL);
     request("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + finalQuery + "&key=" + process.env.APICREDENTIAL,
     function(error, response, body) {
     	if (error) {
     		console.log(error);
     	}
         var data = JSON.parse(body);
-        // res.send(data);
         console.log(data);
         res.render("index", {data: data});
     }
@@ -52,9 +49,8 @@ app.get("/search/:query", function(req, res) {
 });
 
 app.get("/download/:videoUrl", function(req, res) {
-    console.log(cwd);
-    var video = youtube("https://www.youtube.com/embed/" + req.params.videoUrl, 
-    ["--format=18"], 
+    var video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
+    ["--format=18"],
     {cwd: cwd});
     console.log(video);
     video.on("info", function(info) {
