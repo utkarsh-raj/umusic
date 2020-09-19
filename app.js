@@ -52,8 +52,8 @@ app.get("/download/:videoUrl", function(req, res) {
     var video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
     ["--format=18"],
     {cwd: cwd});
-    // console.log(video);
     var size, filename;
+
     video.on("info", function(info) {
         console.log("Download Started");
         if (info.track === null) {
