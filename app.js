@@ -52,7 +52,8 @@ app.get("/download/:videoUrl", function(req, res) {
     var video = youtube("http://www.youtube.com/watch?v=" + req.params.videoUrl, 
     ["--format=18"],
     {cwd: cwd});
-    console.log(video);
+    var size, filename;
+
     video.on("info", function(info) {
         console.log("Download Started");
         if (info.track === null) {
@@ -61,12 +62,25 @@ app.get("/download/:videoUrl", function(req, res) {
         else {
             track = String(info.track + ".mp4");
         }
-        console.log(track);
-
-        video.pipe(fs.createWriteStream(track));
-
-        res.redirect("/started");
+        // console.log(track);
+        size = info.size
+        filename = info._filename
+        res.writeHead(200, {
+            "Content-Disposition": "attachment;filename=" + filename,
+            'Content-Type': 'video/mp4',
+            'Content-Length': size
+        });
     });;
+
+    video.on('data',(data)=>{
+        res.write(data)
+    })
+
+    video.on('end',(end)=>{
+        console.log('Download end')
+
+        res.end();
+    })
 });
 
 app.get("/started", function(req, res) {
